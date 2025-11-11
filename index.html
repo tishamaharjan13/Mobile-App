@@ -1,2 +1,216 @@
 <!DOCTYPE html>
-<html></html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week 2</title>
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: rgb(132, 221, 153);
+      }
+
+      #group-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        padding: 40px;
+      }
+
+      img {
+        width: 180px;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 15px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+      }
+
+      #group {
+        background-color: #d1fae5; /* soft green */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        padding: 30px;
+        border-radius: 20px;
+        width: 700px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.4s ease;
+      }
+
+      h1 {
+        color: #1e3a8a; /* deep blue */
+        margin-bottom: 8px;
+      }
+
+      h3 {
+        margin: 4px 0;
+        color: #374151; /* soft dark gray */
+      }
+
+      #group1,
+      .group2,
+      .group3,
+      .group4 {
+        width: 480px;
+        padding: 18px;
+        border-radius: 12px;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      #group1 {
+        background-color: #a7f3d0; /* pastel green */
+      }
+
+      .group2 {
+        background-color: #fcd5ce; /* pastel pink */
+      }
+
+      .group3 {
+        background-color: #ffe4a1; /* pastel yellow */
+      }
+
+      .group4 {
+        background-color: #d6c4fb; /* pastel purple */
+      }
+
+      /* Make all buttons inside #group appear neatly */
+      #group button {
+        margin: 8px 5px; /* space around buttons */
+        padding: 10px 20px;
+        background-color: #658bde;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: background 0.3s, transform 0.2s;
+      }
+
+      #group button:hover {
+        background-color: #1e40af;
+        transform: scale(1.05);
+      }
+
+      /* Buttons outside group (like math or image) can remain same */
+
+      input[type="number"] {
+        padding: 8px 10px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        outline: none;
+        width: 150px;
+        text-align: center;
+      }
+
+      .calculator {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 20px;
+      }
+
+      .calc-row {
+        display: flex;
+        align-items: center;
+        gap: 15px; /* space between button and answer */
+      }
+
+      .calc-row button {
+        width: 120px;
+        padding: 10px;
+        font-size: 16px;
+        background-color: #7b67d3;
+        color: rgb(36, 34, 34);
+        font-weight: bold;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background 0.3s, transform 0.2s;
+      }
+
+      .calc-row button:hover {
+        background-color: #1e40af;
+        transform: scale(1.05);
+      }
+
+      .calc-row span {
+        font-weight: 600;
+        font-size: 16px;
+        min-width: 50px;
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="group-container">
+      <img id="images" src="images/images.jpg" alt="Profile" />
+      <button onclick="changeImage()">Change Image</button>
+
+      <h2>Check if a number is Odd or Even</h2>
+      <input type="number" id="num" placeholder="Enter a number" />
+      <button onclick="checkOddEven()">Check</button>
+      <p id="result"></p>
+
+      <div class="calculator">
+        <div class="calc-row">
+          <button onclick="addNumbers()">Add</button>
+          <span id="addition">0</span>
+        </div>
+        <div class="calc-row">
+          <button onclick="subtractNumbers()">Subtract</button>
+          <span id="subtraction">0</span>
+        </div>
+        <div class="calc-row">
+          <button onclick="multiplyNumbers()">Multiply</button>
+          <span id="multiplication">0</span>
+        </div>
+        <div class="calc-row">
+          <button onclick="divideNumbers()">Divide</button>
+          <span id="division">0</span>
+        </div>
+      </div>
+
+      <div id="group">
+        <button onclick="changeBackground()">Change Background</button>
+
+        <div id="group1">
+          <h1>Nick Maharjan</h1>
+          <h3>Age: 20</h3>
+          <h3>Bachelors</h3>
+        </div>
+        <button onclick="changeContent()">Change Content</button>
+
+        <div class="group2">
+          <h1>Sicha Maharjan</h1>
+          <h3>Age: 22</h3>
+          <h3>Bachelors</h3>
+        </div>
+
+        <div class="group3">
+          <h1>Niraj Pandey</h1>
+          <h3>Age: 25</h3>
+          <h3>Masters</h3>
+        </div>
+
+        <div class="group4">
+          <h1>Pranish Manandhar</h1>
+          <h3>Age: 38</h3>
+          <h3>PhD</h3>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
