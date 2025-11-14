@@ -1,56 +1,34 @@
-function changeBackground() {
-  const group = document.getElementById("group");
-  group.style.backgroundColor = "#3b82f6";
-}
+$(document).ready(function () {
+  $(".address").click(function () {
+    $(this).hide();
+  });
+  $(".courses").click(function () {
+    $(this).hide();
+  });
+  $(".show").click(function () {
+    $("p").show();
+  });
 
-function changeContent() {
-  document.getElementById("group1").innerHTML = "Hi Everyone!!";
-}
+  $(".name").mouseenter(function () {
+    $(this).css("color", "blue");
+  });
 
-function changeImage() {
-  const img = document.getElementById("images");
-  img.src = "images/1.jpg";
-}
+  $(".name").mouseleave(function () {
+    $(this).css("color", "black");
+  });
 
-function addNumbers() {
-  let x, y, z;
-  x = 5;
-  y = 10;
-  z = x + y;
-  document.getElementById("addition").innerHTML = `Addition ${x}+${y}: ` + z;
-}
-
-function subtractNumbers() {
-  let x, y, z;
-  x = 10;
-  y = 5;
-  z = x - y;
-  document.getElementById("subtraction").innerHTML =
-    `Subtraction ${x}-${y}: ` + z;
-}
-
-function multiplyNumbers() {
-  let x, y, z;
-  x = 5;
-  y = 4;
-  z = x * y;
-  document.getElementById("multiplication").innerHTML =
-    `Multiplication ${x}*${y}: ` + z;
-}
-
-function divideNumbers() {
-  let x, y, z;
-  x = 20;
-  y = 4;
-  z = x / y;
-  document.getElementById("division").innerHTML = `Division ${x}/${y}: ` + z;
-}
-
-function checkOddEven() {
-  let number = document.getElementById("num").value;
-  if (number % 2 == 0) {
-    document.getElementById("result").innerHTML = number + " is Even.";
-  } else {
-    document.getElementById("result").innerHTML = number + " is Odd.";
-  }
-}
+  $(".address").hover(
+    function () {
+      alert("you hovered on address");
+    },
+    function () {
+      alert("You are leaving address now.");
+    }
+  );
+  $(".text").click(function () {
+    $(this).css("font-size", 30 + "px");
+  });
+  $(".text").dblclick(function () {
+    $(this).css("font-size", 20 + "px");
+  });
+});
