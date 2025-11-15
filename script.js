@@ -32,3 +32,34 @@ $(document).ready(function () {
     $(this).css("font-size", 20 + "px");
   });
 });
+
+$(document).ready(function () {
+  $("#box").click(function () {
+    var div = $("#box");
+    div.animate({ height: "250px", opacity: 0.7 }, "slow", function () {
+      div.css({
+        color: "yellow",
+        fontSize: "30px",
+      });
+    });
+
+    div.animate({ width: "250px", opacity: 0.5 }, "slow", function () {
+      div.css({
+        color: "blue",
+        fontSize: "45px",
+      });
+    });
+    div.animate({ height: "150px", opacity: 0.3 }, "slow", function () {
+      div.css({
+        color: "black",
+        fontSize: "30px",
+      });
+    });
+    div.animate({ width: "150px", opacity: 1 }, "slow", function () {
+      div.css({
+        color: "white",
+        fontSize: "20px",
+      });
+    });
+  });
+});
