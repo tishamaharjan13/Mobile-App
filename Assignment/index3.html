@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Learning Platform</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="App.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        background: #f8fafc;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 5%;
+        background: white;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+      .name {
+        font-size: 24px;
+        font-weight: 700;
+        color: #4f46e5;
+      }
+      .items {
+        display: flex;
+        gap: 25px;
+      }
+      .items a {
+        text-decoration: none;
+        color: #555;
+        font-weight: 500;
+      }
+      .items a:hover {
+        color: #4f46e5;
+      }
+
+      .user {
+        display: flex;
+        gap: 15px;
+      }
+
+      .hamburger {
+        display: none;
+        font-size: 24px;
+        cursor: pointer;
+        padding: 8px;
+        border-radius: 6px;
+        background: #f1f5f9;
+        color: #4f46e5;
+        font-weight: bold;
+      }
+
+      .hamburger:hover {
+        background: #e2e8f0;
+      }
+
+      .header {
+        height: 250px;
+        background: linear-gradient(135deg, #4f46e5, #7c3aed);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        text-align: center;
+      }
+      .info h1 {
+        font-size: 36px;
+        margin-bottom: 10px;
+      }
+
+      .courses {
+        max-width: 1100px;
+        margin: 40px auto;
+        padding: 0 20px;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 25px;
+        margin-top: 30px;
+      }
+      .list {
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      .course-name {
+        height: 160px;
+        background: linear-gradient(135deg, #4f46e5, #7c3aed);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 18px;
+        font-weight: 600;
+      }
+      .course-details {
+        padding: 20px;
+      }
+      .list h3 {
+        margin-bottom: 10px;
+        color: #333;
+      }
+      .list p {
+        color: #666;
+      }
+      .mobile-menu {
+        display: none;
+        background: white;
+        padding: 20px;
+        border-top: 1px solid #e2e8f0;
+      }
+
+      .mobile-menu.active {
+        display: block;
+        max-height: 500px;
+        padding: 20px;
+      }
+
+      .mobile-menu a {
+        display: block;
+        padding: 12px 0;
+        text-decoration: none;
+        color: #555;
+        border-bottom: 1px solid #f1f5f9;
+      }
+
+      .mobile-menu a:hover {
+        color: #4f46e5;
+      }
+
+      @media (max-width: 450px) {
+        .items,
+        .user {
+          display: none;
+        }
+
+        .hamburger {
+          display: block; 
+        }
+      }
+      @media (min-width: 451px) {
+        .mobile-menu {
+          display: none !important;
+        }
+      }
+      @media (max-width: 400px) {
+        .info h1 {
+          font-size: 26px;
+        }
+
+        .grid {
+          grid-template-columns: 1fr;
+
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="name">LearnWithMe</div>
+
+      <div class="items">
+        <a>Home</a>
+        <a>Categories</a>
+        <a>My Courses</a>
+        <a>Communities</a>
+      </div>
+      <div class="user">
+        <div class="icon-btn">Profile</div>
+      </div>
+      <div class="hamburger">&#x2630;</div>
+    </nav>
+
+    <div class="mobile-menu">
+      <a>Home</a>
+      <a>Categories</a>
+      <a>My Courses</a>
+      <a>Communities</a>
+      <a>Profile</a>
+    </div>
+
+    <div class="header">
+      <div class="info">
+        <h1>Learn Something New</h1>
+        <p>Expand your skills with our courses</p>
+      </div>
+    </div>
+
+    <div class="courses">
+      <h2>Popular Courses</h2>
+      <div class="grid">
+        <div class="list">
+          <div class="course-name">Web Development</div>
+          <div class="course-details">
+            <h3>Frontend Fundamentals</h3>
+            <p>Learn HTML, CSS, and JavaScript to build modern websites.</p>
+          </div>
+        </div>
+        <div class="list">
+          <div class="course-name">Data Science</div>
+          <div class="course-details">
+            <h3>Python for Data Analysis</h3>
+            <p>Analyze and visualize data with Python and popular libraries.</p>
+          </div>
+        </div>
+    </div>
+  </body>
+</html>

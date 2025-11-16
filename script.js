@@ -1,3 +1,4 @@
+//Tuesday
 $(document).ready(function () {
   $(".address").click(function () {
     $(this).hide();
@@ -33,6 +34,7 @@ $(document).ready(function () {
   });
 });
 
+//Thursday
 $(document).ready(function () {
   $("#box").click(function () {
     var div = $("#box");
