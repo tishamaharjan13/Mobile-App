@@ -1,5 +1,5 @@
-import SignIn from "./SignIn";
+import Counter from "./Counter";
 
 export default function App() {
-  return <SignIn />;
+  return <Counter />;
 }
